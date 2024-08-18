@@ -60,7 +60,9 @@ export default function Header() {
           alt='Logo'
         />
       </Link>
-      <form onSubmit={handleSubmit} className='flex-grow lg:flex-grow-0'>
+
+      {/* Search functionality only visible on large screens */}
+      <form onSubmit={handleSubmit} className='hidden lg:block lg:flex-grow-0'>
         <TextInput
           type='text'
           placeholder='Search...'
@@ -70,12 +72,19 @@ export default function Header() {
           onChange={(e) => setSearchTerm(e.target.value)}
         />
       </form>
-      <Button className='w-12 h-10 lg:hidden' color='gray' pill>
-        <AiOutlineSearch />
+
+      <Button
+        className='w-12 h-10 lg:hidden'
+        color='gray'
+        pill
+        onClick={() => dispatch(toggleTheme())}
+      >
+        {theme === 'light' ? <FaSun /> : <FaMoon />}
       </Button>
+
       <div className='flex gap-2 md:order-2'>
         <Button
-          className='w-12 h-10 hidden sm:inline'
+          className='w-12 h-10 hidden lg:inline'
           color='gray'
           pill
           onClick={() => dispatch(toggleTheme())}
@@ -111,14 +120,27 @@ export default function Header() {
         )}
         <Navbar.Toggle />
       </div>
-      <Navbar.Collapse>
-        <Navbar.Link active={path === '/'} as={'span'}>
+
+      <Navbar.Collapse className='items-center'>
+        <Navbar.Link
+          as='span'
+          className='w-full text-center'
+          active={path === '/'}
+        >
           <Link to='/'>Home</Link>
         </Navbar.Link>
-        <Navbar.Link active={path === '/about'} as={'span'}>
+        <Navbar.Link
+          as='span'
+          className='w-full text-center'
+          active={path === '/about'}
+        >
           <Link to='/about'>About</Link>
         </Navbar.Link>
-        <Navbar.Link active={path === '/projects'} as={'span'}>
+        <Navbar.Link
+          as='span'
+          className='w-full text-center'
+          active={path === '/projects'}
+        >
           <Link to='/projects'>Projects</Link>
         </Navbar.Link>
       </Navbar.Collapse>
