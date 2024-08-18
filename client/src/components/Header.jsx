@@ -57,7 +57,8 @@ export default function Header() {
         <img
           src='https://ucarecdn.com/aecb7249-40f5-42f1-a338-ec82041273e8/ankitsbloghighresolutionlogotransparent.png'
           className='w-[120px] lg:h-[70px] lg:w-[200px]'
-        ></img>
+          alt='Logo'
+        />
       </Link>
       <form onSubmit={handleSubmit} className='flex-grow lg:flex-grow-0'>
         <TextInput
@@ -111,13 +112,13 @@ export default function Header() {
         <Navbar.Toggle />
       </div>
       <Navbar.Collapse>
-        <Navbar.Link active={path === '/'} as={'div'}>
+        <Navbar.Link active={path === '/'} as={'span'}>
           <Link to='/'>Home</Link>
         </Navbar.Link>
-        <Navbar.Link active={path === '/about'} as={'div'}>
+        <Navbar.Link active={path === '/about'} as={'span'}>
           <Link to='/about'>About</Link>
         </Navbar.Link>
-        <Navbar.Link active={path === '/projects'} as={'div'}>
+        <Navbar.Link active={path === '/projects'} as={'span'}>
           <Link to='/projects'>Projects</Link>
         </Navbar.Link>
       </Navbar.Collapse>
