@@ -29,7 +29,6 @@ export default function FooterCom() {
                 </Footer.Link>
                 <Footer.Link
                   href='/about'
-                  target='_blank'
                   rel='noopener noreferrer'
                 >
                   Ankit's Blog
