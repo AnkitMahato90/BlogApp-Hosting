@@ -29,7 +29,6 @@ export default function FooterCom() {
                 </Footer.Link>
                 <Footer.Link
                   href='/about'
-                  rel='noopener noreferrer'
                 >
                   Ankit's Blog
                 </Footer.Link>
