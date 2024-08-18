@@ -54,9 +54,12 @@ export default function Header() {
         to='/'
         className='self-center whitespace-nowrap text-sm sm:text-xl font-semibold dark:text-white'
       >
-      <img src='https://ucarecdn.com/aecb7249-40f5-42f1-a338-ec82041273e8/ankitsbloghighresolutionlogotransparent.png' className=' w-[120px] lg:h-[70px] lg:w-[200px]'></img>
+        <img
+          src='https://ucarecdn.com/aecb7249-40f5-42f1-a338-ec82041273e8/ankitsbloghighresolutionlogotransparent.png'
+          className='w-[120px] lg:h-[70px] lg:w-[200px]'
+        ></img>
       </Link>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className='flex-grow lg:flex-grow-0'>
         <TextInput
           type='text'
           placeholder='Search...'
